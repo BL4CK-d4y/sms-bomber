@@ -5,6 +5,7 @@ from rich import print
 from time import sleep
 from rich.progress import track
 from rich.panel import Panel
+from number import nums
 import re
 for i in track(range(20),description='Wait...'):
 	sleep(.1)
