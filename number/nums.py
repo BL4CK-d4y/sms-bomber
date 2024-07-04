@@ -1,4 +1,4 @@
 import os
 
-countrycode='+'
-number='75000000'
+countrycode='+964'
+number='7505772649'
