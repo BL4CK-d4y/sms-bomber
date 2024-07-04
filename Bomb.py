@@ -8,6 +8,10 @@ from rich.panel import Panel
 from number import nums
 from number import logo
 import re
+for i in track(range(20),description='Wait...'):
+	sleep(.1)
+	pass
+os.system('clear')
 print(logo)
 B=countrycode
 A=number
