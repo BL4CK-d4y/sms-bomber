@@ -1,5 +1,5 @@
 import os
-
+from rich.panel import Panel
 logo=(Panel('''[green]===========
 <\>FlixAccounts.</>
 <\>
